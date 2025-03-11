@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "client": "python -m http.server --directory src 8000",
+    "dev": "live-server src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.12",
+    "flowbite": "^3.1.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.12"
+  }
+}
