@@ -108,6 +108,7 @@ document.getElementById('certificate-IP').addEventListener('click', () => {
     diagram.classList.add('hidden');
     posDemo.classList.add('hidden');
     crmDemo.classList.add('hidden');
+    Show_ALL_Demo.classList.add('hidden');
     content.innerHTML = "";
 
     // สร้างเนื้อหาใหม่
