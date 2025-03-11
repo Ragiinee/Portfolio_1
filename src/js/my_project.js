@@ -117,7 +117,7 @@ document.getElementById('certificate-IP').addEventListener('click', () => {
     div.innerHTML = `
         <div class="duration-700 ease-in-out">
             <img src="./image/itpe.png"
-                class="block  w-full h-52 "
+                class="block  w-full h-full "
                 alt="...">
         </div>     
     `;

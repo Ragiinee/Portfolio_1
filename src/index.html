@@ -8,6 +8,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/{toggle name}.min.css">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./forn.css">
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn_NO_opacity {
+            0% {
+                transform: translateY(40px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Class to apply the fadeIn animation */
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-fadeIn_no_opacity {
+            animation: fadeIn_NO_opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 
 <body class="overflow-hidden">
@@ -23,7 +55,7 @@
                     </a>
                     <!--buttom darkmode-->
                     <button id="theme-toggle" type="button"
-                        class="hidden sm:hidden md:block lg:block hover:bg-gray-100 dark:hover:bg-fuchsia-300 mx-2 p-2.5 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-gray-500 dark:text-gray-400 text-sm">
+                        class="hidden sm:hidden md:block lg:block hover:bg-gray-100 dark:hover:bg-gray-600 mx-2 p-2.5 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-gray-500 dark:text-gray-400 text-sm">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-700" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -38,7 +70,7 @@
                     <!--change language-->
                 </div>
                 <button data-collapse-toggle="navbar-default" type="button" id="button-backdrop"
-                    class="lg:hidden inline-flex justify-center items-center hover:bg-gray-100 dark:hover:bg-fuchsia-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 w-10 h-10 text-gray-500 dark:text-gray-400 text-sm"
+                    class="lg:hidden inline-flex justify-center items-center hover:bg-gray-100 dark:hover:bg-gray-600 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 w-10 h-10 text-gray-500 dark:text-gray-400 text-sm"
                     aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -78,9 +110,51 @@
     <main
         class="fixed bg-gray-100 dark:bg-gray-800 mt-18 pb-16 w-full h-screen overflow-y-auto scroll-mt-20 scroll-smooth"
         id="main-content">
-        <div class="bg-white dark:bg-slate-950 w-full h-[900px]" id="home">แต่ง</div>
+        <!--home-->
+        <div class="flex flex-wrap justify-center bg-[url('./image/bg.webp')] bg-cover w-full h-[900px] dark:text-white"
+            id="home">
+            <div
+                class="z-50 absolute inset-0 bg-white/30 dark:bg-black/30 backdrop-invert backdrop-opacity-30 w-full h-[900px]">
+                <div class="flex flex-wrap justify-center w-full h-full dark:text-white">
+                    <div class="grid grid-rows-3 mx-auto p-8 w-full max-w-screen-xl">
+                        <span class="mt-18">
+                            <h1 class="font-bold text-6xl animate-fadeIn">My
+                                Portfolio</h1>
+                        </span>
+                        <span class="flex justify-center items-center m-4 pl-12 transition">
+                            <p class="flex justify-center font-semibold text-5xl whitespace-nowrap rotate-180 animate-fadeIn"
+                                style="writing-mode: vertical-rl;">สวัสดีครับ</p>
+                            <div class="ml-4 text-2xl text-justify animate-fadeIn">
+                                <h3 class="inline-flex ml-12 font-medium text-4xl">ชื่ออ๊อฟครับ</h3>
+                                ปัจจุบันกำลังศึกษาปริญญาตรี
+                                สาขาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 3
+                                โดยเว็บไซต์นี้จัดทำขึ้นเพื่อแสดงผลงานของผม รวมถึงโครงการที่เคยทำ ความสามารถที่มี
+                                และเป้าหมายในอนาคต เพื่อให้ทุกคนได้รู้จักและเข้าใจถึงศักยภาพของผมมากขึ้น ขอบคุณที่รับชม..💖
+                            </div>
+
+                        </span>
+
+                        <span class="flex justify-start items-center animate-fadeIn">
+                            <a href="#About-me">
+                                <button class="flex bg-teal-400 dark:bg-fuchsia-300 p-8 rounded-2xl cursor-pointer">
+                                    เกี่ยวกับฉัน
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="mx-2 size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                    </svg>
+                                </button>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!--About me-->
-        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl scroll-smooth" id="About-me">
+        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl lg:h-[900px] scroll-smooth content_profile"
+            id="About-me">
             <div
                 class="grid grid-cols-1 lg:grid-cols-3 bg-white dark:bg-slate-950 shadow-xl rounded-2xl w-full dark:text-white">
                 <div class="col-span-1 py-8">
@@ -147,10 +221,17 @@
                     <div class="block lg:flex flex-row justify-between">
                         <span class="inline-flex justify-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
-                                class="dark:hidden block size-6" viewBox="0 0 50 50">
-                                <path
-                                    d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z">
-                                </path>
+                                viewBox="0,0,256,256" class="dark:hidden block size-6">
+                                <g fill="#2dd4bf" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.12,5.12)">
+                                        <path
+                                            d="M17.791,46.836c0.711,-0.306 1.209,-1.013 1.209,-1.836v-5.4c0,-0.197 0.016,-0.402 0.041,-0.61c-0.014,0.004 -0.027,0.007 -0.041,0.01c0,0 -3,0 -3.6,0c-1.5,0 -2.8,-0.6 -3.4,-1.8c-0.7,-1.3 -1,-3.5 -2.8,-4.7c-0.3,-0.2 -0.1,-0.5 0.5,-0.5c0.6,0.1 1.9,0.9 2.7,2c0.9,1.1 1.8,2 3.4,2c2.487,0 3.82,-0.125 4.622,-0.555c0.934,-1.389 2.227,-2.445 3.578,-2.445v-0.025c-5.668,-0.182 -9.289,-2.066 -10.975,-4.975c-3.665,0.042 -6.856,0.405 -8.677,0.707c-0.058,-0.327 -0.108,-0.656 -0.151,-0.987c1.797,-0.296 4.843,-0.647 8.345,-0.714c-0.112,-0.276 -0.209,-0.559 -0.291,-0.849c-3.511,-0.178 -6.541,-0.039 -8.187,0.097c-0.02,-0.332 -0.047,-0.663 -0.051,-0.999c1.649,-0.135 4.597,-0.27 8.018,-0.111c-0.079,-0.5 -0.13,-1.011 -0.13,-1.543c0,-1.7 0.6,-3.5 1.7,-5c-0.5,-1.7 -1.2,-5.3 0.2,-6.6c2.7,0 4.6,1.3 5.5,2.1c1.699,-0.701 3.599,-1.101 5.699,-1.101c2.1,0 4,0.4 5.6,1.1c0.9,-0.8 2.8,-2.1 5.5,-2.1c1.5,1.4 0.7,5 0.2,6.6c1.1,1.5 1.7,3.2 1.6,5c0,0.484 -0.045,0.951 -0.11,1.409c3.499,-0.172 6.527,-0.034 8.204,0.102c-0.002,0.337 -0.033,0.666 -0.051,0.999c-1.671,-0.138 -4.775,-0.28 -8.359,-0.089c-0.089,0.336 -0.197,0.663 -0.325,0.98c3.546,0.046 6.665,0.389 8.548,0.689c-0.043,0.332 -0.093,0.661 -0.151,0.987c-1.912,-0.306 -5.171,-0.664 -8.879,-0.682c-1.665,2.878 -5.22,4.755 -10.777,4.974v0.031c2.6,0 5,3.9 5,6.6v5.4c0,0.823 0.498,1.53 1.209,1.836c9.161,-3.032 15.791,-11.672 15.791,-21.836c0,-12.682 -10.317,-23 -23,-23c-12.683,0 -23,10.318 -23,23c0,10.164 6.63,18.804 15.791,21.836z">
+                                        </path>
+                                    </g>
+                                </g>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
                                 viewBox="0,0,256,256" class="hidden dark:block size-6">
@@ -173,7 +254,7 @@
                         </span>
                         <span class="inline-flex justify-center w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6 dark:text-fuchsia-300">
+                                stroke="currentColor" class="size-6 text-teal-400 dark:text-fuchsia-300">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                             </svg>
@@ -190,7 +271,8 @@
         </div>
 
         <!--My work-->
-        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl scroll-smooth" id="My-work">
+        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl lg:h-[900px] scroll-smooth content_profile"
+            id="My-work">
             <div
                 class="grid grid-cols-1 lg:grid-cols-3 bg-white dark:bg-slate-950 shadow-xl rounded-2xl w-full dark:text-white">
                 <!--img mywork-->
@@ -615,11 +697,11 @@
                                             class="group flex items-center hover:bg-gray-100 dark:hover:bg-fuchsia-300 p-2 rounded-lg w-full text-gray-900 dark:text-white text-base transition duration-75"
                                             aria-controls="dropdown-portfolio"
                                             data-collapse-toggle="dropdown-portfolio">
-                                            <svg class="group-hover:text-gray-900 dark:group-hover:text-white w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 shrink-0"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 18 21">
-                                                <path
-                                                    d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="group-hover:text-gray-900 dark:group-hover:text-white w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 shrink-0">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                             </svg>
                                             <span
                                                 class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">เว็บไซต์
@@ -638,7 +720,8 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" id="code-to-github"
+                                                <a href="https://github.com/Ragiinee/Portfolio_1.git"
+                                                    id="code-to-github"
                                                     class="group flex items-center hover:bg-gray-100 dark:hover:bg-fuchsia-300 p-2 pl-11 rounded-lg w-full text-gray-900 dark:text-white transition duration-75">
                                                     code projects
                                                 </a>
@@ -650,11 +733,12 @@
                                             class="group flex items-center hover:bg-gray-100 dark:hover:bg-fuchsia-300 p-2 rounded-lg w-full text-gray-900 dark:text-white text-base transition duration-75"
                                             aria-controls="dropdown-certificate"
                                             data-collapse-toggle="dropdown-certificate">
-                                            <svg class="group-hover:text-gray-900 dark:group-hover:text-white w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 shrink-0"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 18 21">
-                                                <path
-                                                    d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                class="group-hover:text-gray-900 dark:group-hover:text-white w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 shrink-0">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
+                                                    clip-rule="evenodd" />
                                             </svg>
                                             <span
                                                 class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">ใบเกียรติบัตร</span>
@@ -683,7 +767,8 @@
         </div>
 
         <!--My skill-->
-        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl scroll-smooth" id="My-skills">
+        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl lg:h-[900px] scroll-smooth content_profile"
+            id="My-skills">
             <div
                 class="grid grid-cols-1 lg:grid-cols-2 bg-white dark:bg-slate-950 shadow-xl rounded-2xl w-full dark:text-white">
                 <label for="" class="col-span-1 lg:col-span-2 m-4 w-full font-bold text-2xl">ความสามารถ</label>
@@ -802,7 +887,8 @@
         </div>
 
         <!--My Future-goals-->
-        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl scroll-smooth" id="Future-goals">
+        <div class="flex flex-wrap items-center mx-auto p-4 max-w-screen-xl lg:h-[900px] scroll-smooth content_profile"
+            id="Future-goals">
             <div
                 class="grid grid-cols-1 lg:grid-cols-3 bg-white dark:bg-slate-950 shadow-xl rounded-2xl w-full dark:text-white">
                 <div class="col-span-2 m-4 text-justify">
@@ -834,6 +920,9 @@
     <script src="./js/dark_mode.js"></script>
     <script src="./js/my_project.js"></script>
     <script src="./js/action.js"></script>
+    <script>
+
+    </script>
 </body>
 
 
